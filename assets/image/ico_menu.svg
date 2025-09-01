@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="images_header_ico_bar.svg" data-name="images/header/ico_bar.svg" class="cls-1" d="M350,39h24v2H350V39Zm0-8h24v2H350V31Zm0-8h24v2H350V23Z" transform="translate(-350 -23)"/>
+</svg>
