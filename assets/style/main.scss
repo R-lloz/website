@@ -1,0 +1,300 @@
+// /* scss: 変数設定 */
+// カンプ / コンテンツ幅の指定
+$sp-full-width: 390;        // スマホ用のカンプ幅
+$pc-full-width: 1440;       // PC用のカンプ幅
+$pc-content-width: 1240;    // PC用のカンプのコンテンツ幅(ガイド線の幅)
+
+// ブレークポイント設定
+$breakpoint-md: 768;
+$breakpoint-lg: $pc-content-width;
+
+// /* scss: ブレークポイント関数 */
+$breakpoints: (
+    "md": "screen and (min-width: #{$breakpoint-md}px)",
+    "lg": "screen and (min-width: #{$breakpoint-lg}px)",
+) !default;
+
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+/* 共通スタイル */
+html {
+	font-size: calc(10 * 100vw / $sp-full-width);
+    scroll-behavior: smooth;
+
+    @include mq() {
+        font-size: calc(10 * 100vw / $pc-content-width);
+    }
+
+    @include mq(lg) {
+        font-size: 62.5%;
+    }
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #111;
+    line-height: 1.75;
+    padding-top: 6.3rem;
+    @include mq() {
+        padding-top: 11.4rem;
+    }
+}
+
+a:hover {
+    opacity: .7;
+}
+
+/* タイトル */
+.heading {
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1;
+
+    &--top {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.6rem;
+        @include mq() {
+            row-gap: 2rem;
+        }
+    }
+
+    &--en {
+        font-family: 'Montserrat', serif;
+        font-weight: 100;
+        font-size: 1.6rem;
+        color: #168352;
+        @include mq() {
+            font-size: 2rem;
+        }
+    }
+
+    &--jp {
+        font-weight: 700;
+        font-size: 2rem;
+
+        @include mq() {
+            font-size: 2.8rem;
+        }
+    }
+}
+
+/* ヘッダー */
+.header {
+    height: 6.3rem;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    @include mq() {
+        height: 11.4rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.6rem 2rem 2rem 1.6rem;
+        position: relative;
+
+        @include mq() {
+            max-width: 103rem;
+            padding: 1.8rem .2rem 2rem .3rem;
+        }
+    }
+
+    &__logo-image {
+        width: 19.7rem;
+        height: 2.3rem;
+
+        @include mq() {
+            width: 26.3rem;
+            height: 3rem;
+        }
+    }
+
+    &__menu-btn {
+        @include mq() {
+            display: none;
+        }
+    }
+
+    &__menu-btn-image {
+        width: 2.4rem;
+        height: 1.8rem;
+    }
+
+    &__nav {
+        display: none;
+        position: fixed;
+        width: 35.8rem;
+        top: 6rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #168352;
+        border-radius: 2.4rem;
+        padding: 2rem;
+
+        @include mq() {
+            display: block;
+            position: static;
+            width: fit-content;
+            transform: none;
+            background-color: #fff;
+            padding: 0;
+        }
+    }
+
+    &__nav-list {
+        @include mq() {
+            display: flex;
+            column-gap: 4rem;
+        }
+    }
+
+    &__nav-item {
+        list-style: none;
+
+        &--top {
+            @include mq() {
+                display: none;
+            }
+        }
+    }
+
+    &__nav-link {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 2rem 0;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+
+        @include mq() {
+            color: #111;
+            font-size: 1.6rem;
+        }
+    }
+}
+
+/* メイン */
+/* カバー */
+.cover {
+    padding: 2.2rem 1.6rem 2.2rem 1.6rem;
+
+    @include mq() {
+        padding: 5.5rem 3.65rem 1rem 3.65rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+        @include mq() {
+            max-width: 124rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__catch-copy {
+        font-size: 2.8rem;
+        font-weight: 700;
+        @include mq() {
+            font-size: 4rem;
+            width: fit-content;
+            margin-left: 4rem;
+        }
+    }
+
+    &__description {
+        font-size: 1.5rem;
+        margin-top: 3.2rem;
+        @include mq() {
+            max-width: 53rem;
+            margin-top: 0;
+            margin-right: 4rem;
+        }
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: 45rem;
+        border-radius: 4rem;
+        margin-top: 3.2rem;
+        @include mq() {
+            height: 55rem;
+            margin-top: 6.4rem;
+        }
+    }
+}
+
+/* 私たちについて */
+.about {
+    padding: 2.2rem 0;
+
+    @include mq() {
+        padding: 5.5rem 3.65rem 1rem 3.65rem;
+    }
+
+    &__contents {
+        margin-top: 1.4rem;
+        position: relative;
+
+        @include mq() {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 2.3rem;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        @include mq() {
+            width: 39rem;
+            height: 57rem;
+            border-radius: 4rem;
+        }
+    }
+
+    &__description {
+        position: absolute;
+        width: 35.8rem;
+        top: 3.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 3.2rem;
+        background-color: rgb(255, 255, 255, .8);
+        padding: 2.4rem;
+        font-size: 1.5rem;
+        @include mq() {
+            position: static;
+            width: 40rem;
+            transform: none;
+            padding: 0;
+        }
+    }
+
+    &__description-heading {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        word-break: auto-phrase;
+        @include mq() {
+            font-size: 2rem;
+        }
+    }
+
+
+}
