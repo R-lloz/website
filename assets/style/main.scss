@@ -50,16 +50,15 @@ a:hover {
 
 /* タイトル */
 .heading {
-    text-align: center;
-    margin-bottom: 1rem;
     line-height: 1;
 
     &--top {
+        text-align: center;
         display: flex;
         flex-direction: column;
-        row-gap: 1.6rem;
+        row-gap: .8rem;
         @include mq() {
-            row-gap: 2rem;
+            row-gap: 1.5rem;
         }
     }
 
@@ -79,6 +78,56 @@ a:hover {
 
         @include mq() {
             font-size: 2.8rem;
+        }
+    }
+
+    &--underline {
+        position: relative;
+        font-size: 2.2rem;
+        border-bottom: .3rem solid #ddd;
+        padding-bottom: .4rem;
+        &:before {
+            position: absolute;
+            content: "";
+            width: 5rem;
+            bottom: -.3rem;
+            border-bottom: .3rem solid #168352;
+        }
+
+        @include mq() {
+            font-size: 2.8rem;
+            border-bottom: .5rem solid #ddd;
+            padding-bottom: 1.5rem;
+            &:before {
+                width: 10rem;
+                bottom: -.5rem;
+                border-bottom: .5rem solid #168352;
+            }
+        }
+    }
+
+    &--sub {
+        font-weight: 700;
+        font-size: 2rem;
+        margin-top: 1.9rem;
+        margin-left: .1rem;
+
+        &:before {
+            content: "";
+            border-left: .2rem solid #168352;
+            padding-right: 1.6rem;
+            line-height: 2;
+        }
+
+        @include mq() {
+            font-size: 2.4rem;
+            margin-top: 2.6rem;
+            margin-left: 3rem;
+
+            &:before {
+                border-left: .3rem solid #168352;
+                padding-right: 1.7rem;
+            }
         }
     }
 }
@@ -102,12 +151,23 @@ a:hover {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1.6rem 2rem 2rem 1.6rem;
+        padding: 1.9rem 1.6rem 1.7rem 1.6rem;
         position: relative;
 
+        &--top {
+            padding: 1.6rem 1.6rem 2rem 1.6rem;
+        }
+
         @include mq() {
-            max-width: 103rem;
-            padding: 1.8rem .2rem 2rem .3rem;
+            max-width: 124rem;
+            padding: 2.2rem 3.4rem 2rem 3.6rem;
+        }
+    }
+
+    &__logo {
+        padding-top: .1rem;
+        @include mq() {
+            padding-top: .9rem;
         }
     }
 
@@ -136,12 +196,12 @@ a:hover {
         display: none;
         position: fixed;
         width: 35.8rem;
-        top: 6rem;
+        top: 6.3rem;
         left: 50%;
         transform: translateX(-50%);
         background-color: #168352;
         border-radius: 2.4rem;
-        padding: 2rem;
+        padding: 1.8rem 2rem 1.9rem 2rem;
 
         @include mq() {
             display: block;
@@ -164,6 +224,7 @@ a:hover {
         list-style: none;
 
         &--top {
+            padding-right: .5rem;
             @include mq() {
                 display: none;
             }
@@ -174,7 +235,7 @@ a:hover {
         color: #fff;
         text-decoration: none;
         display: block;
-        padding: 2rem 0;
+        padding: 1.3rem 0;
         text-align: center;
         font-size: 1.8rem;
         font-weight: 700;
@@ -182,6 +243,13 @@ a:hover {
         @include mq() {
             color: #111;
             font-size: 1.6rem;
+            padding: 2rem 0;
+        }
+
+        &--current{
+            @include mq() {
+                color: #168352;
+            }
         }
     }
 }
@@ -189,19 +257,31 @@ a:hover {
 /* メイン */
 /* カバー */
 .cover {
-    padding: 2.2rem 1.6rem 2.2rem 1.6rem;
+    padding: .8rem 1.5rem 2.2rem 1.6rem;
 
     @include mq() {
-        padding: 5.5rem 3.65rem 1rem 3.65rem;
+        padding: 1rem 1rem 1rem 1rem;
+    }
+
+    &--top {
+        @include mq() {
+            padding: 3.7rem 1rem 1rem 1rem;
+        }
     }
 
     &__container {
         margin: 0 auto;
         @include mq() {
             max-width: 124rem;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+        }
+
+        &--top {
+            @include mq() {
+                max-width: 116.5rem;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
         }
     }
 
@@ -211,60 +291,145 @@ a:hover {
         @include mq() {
             font-size: 4rem;
             width: fit-content;
-            margin-left: 4rem;
+            margin-left: 3.2rem;
         }
     }
 
     &__description {
         font-size: 1.5rem;
-        margin-top: 3.2rem;
+        margin-top: 1.5rem;
+        line-break: anywhere;
+        line-height: 1.77;
+
         @include mq() {
             max-width: 53rem;
-            margin-top: 0;
-            margin-right: 4rem;
+            margin-right: 3.1rem;
+            margin-top: 1rem;
         }
     }
 
     &__image {
         display: block;
         width: 100%;
-        height: 45rem;
-        border-radius: 4rem;
-        margin-top: 3.2rem;
+        height: 23rem;
+        border-radius: 2.4rem;
+        margin-top: 1.1rem;
         @include mq() {
+            width: 120rem;
             height: 55rem;
-            margin-top: 6.4rem;
+            margin-top: 2.9rem;
+        }
+
+        &--top {
+            height: 45rem;
+            width: auto;
+            border-radius: 4rem;
+            margin-top: 2.6rem;
+            @include mq() {
+                height: 55rem;
+                margin-top: 5.9rem;
+            }
         }
     }
+
+    &__wrapper {
+        @include mq() {
+            position: relative;
+            margin: 0 auto;
+            max-width: 120rem;
+        }
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin-top: 1.9rem;
+        @include mq() {
+            text-align: center;
+            font-size: 3.6rem;
+            background-color: #fff;
+            width: 32.7rem;
+            height: 11.3rem;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-top-right-radius: 4rem;
+            line-height: 1;
+            padding-top: 3.8rem;
+        }
+
+    }
+
+    &__breadcrumb {
+        display: flex;
+        justify-content: end;
+        font-size: 1.2rem;
+        margin-top: 1.7rem;
+
+        @include mq() {
+            margin-top: 2rem;
+            margin-right: 1.8rem;
+        }
+    }
+
+    &__breadcrumb-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__breadcrumb-item {
+        list-style: none;
+
+        &:not(:last-child):after {
+            content: "";
+            display: inline-block;
+            width: .5rem;
+            height: 1rem;
+            background-image: url("/assets/image/ico_breadcrumb.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0 .8rem;
+        }
+    }
+
 }
 
 /* 私たちについて */
 .about {
-    padding: 2.2rem 0;
+    padding: 3.2rem 0 0;
 
     @include mq() {
-        padding: 5.5rem 3.65rem 1rem 3.65rem;
+        padding: 5.2rem 1rem 6.4rem 1rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+        @include mq() {
+            max-width: 97rem;
+        }
     }
 
     &__contents {
-        margin-top: 1.4rem;
+        margin-top: 2.5rem;
         position: relative;
 
         @include mq() {
             display: flex;
             flex-direction: row-reverse;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            margin-top: 2.3rem;
+            margin-top: 3rem;
         }
     }
 
     &__image {
         width: 100%;
+        display: block;
         @include mq() {
             width: 39rem;
             height: 57rem;
             border-radius: 4rem;
+            margin-right: 1.4rem;
+            margin-top: .1rem;
         }
     }
 
@@ -276,25 +441,845 @@ a:hover {
         transform: translateX(-50%);
         border-radius: 3.2rem;
         background-color: rgb(255, 255, 255, .8);
-        padding: 2.4rem;
+        padding: 1.5rem 2.4rem 1.8rem;
         font-size: 1.5rem;
         @include mq() {
             position: static;
-            width: 40rem;
+            width: 40.6rem;
             transform: none;
             padding: 0;
+            margin-top: 0;
         }
+
     }
 
     &__description-heading {
         font-size: 1.8rem;
         font-weight: 700;
-        margin-bottom: 2rem;
-        word-break: auto-phrase;
+        margin-bottom: .7rem;
         @include mq() {
             font-size: 2rem;
+            margin-bottom: 2.4rem;
         }
     }
 
+    &__inline-block {
+        display: inline;
+
+        @include mq() {
+            display: inline-block;
+        }
+
+        &--sp {
+            display: inline-block;
+        }
+    }
+
+}
+
+/* 私たちが選ばれる3つの理由 */
+.features {
+    padding: 5.3rem 1.6rem 5.6rem 1.6rem;
+    background-color: #f3f9f6;
+
+    @include mq() {
+        padding: 6.3rem 1rem 6.4rem 1rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 116.5rem;
+        }
+    }
+
+    &__reasons {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        margin-top: 2.5rem;
+
+        @include mq() {
+            flex-direction: row;
+            column-gap: 3rem;
+            margin-top: 3.2rem;
+        }
+
+    }
+
+    &__reason {
+        border-radius: 2.4rem;
+        overflow: hidden;
+        width: 35.8rem;
+
+        @include mq() {
+            width: 36.9rem;
+        }
+    }
+
+    &__reason-image {
+        width: 100%;
+        height: 20.1rem;
+        display: block;
+
+        @include mq() {
+            height: 22.6rem;
+        }
+    }
+
+    &__reason-description {
+        background-color: #fff;
+        font-size: 1.8rem;
+        font-weight: 700;
+        padding: 1.1rem 1.6rem 1.4rem 1.6rem;
+        @include mq() {
+            font-size: 1.9rem;
+            padding: 1.2rem 2rem 1.5rem;
+        }
+    }
+
+}
+
+/* 製品・サービス紹介 */
+.products {
+    padding: 5.5rem 1.6rem 5.6rem 1.6rem;
+
+    @include mq() {
+        padding: 6.4rem 3.65rem 6.4rem 3.65rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 110rem;
+        }
+    }
+
+    &__list {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+
+        @include mq() {
+            margin-top: 3.4rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: 4rem;
+        }
+    }
+
+    &__item {
+        background-color: #168352;
+        color: #fff;
+        border-radius: 2.4rem;
+        padding: 1.4rem 2.2rem 1.4rem 2.4rem;
+        font-size: 1.6rem;
+        font-weight: 700;
+        @include mq() {
+            padding: .9rem 2.2rem 1.4rem 2.4rem;
+            width: 33.3rem;
+            font-size: 1.7rem;
+
+        }
+
+        &--large {
+            @include mq() {
+                padding: 1.7rem 1rem 1.6rem 3.2rem;
+                width: 52.5rem;
+                font-size: 2.1rem;
+            }
+        }
+    }
+
+    &__link {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        column-gap: 1.7rem;
+        @include mq() {
+            column-gap: 2rem;
+        }
+
+        &--large {
+            @include mq() {
+                column-gap: 2.7rem;
+            }
+        }
+
+    }
+
+    &__item-image {
+        width: 10rem;
+        height: 10rem;
+        margin-top: .5rem;
+        @include mq() {
+            width: 11rem;
+            height: 11rem;
+            margin-top: .9rem;
+        }
+
+        &--large {
+            @include mq() {
+                width: 13.3rem;
+                height: 13.3rem;
+                margin-top: .6rem;
+            }
+        }
+    }
+
+    &__item-title {
+        letter-spacing: -.06rem;
+        @include mq() {
+            letter-spacing: 0;
+        }
+    }
+
+    &__inline-block {
+        display: inline-block;
+
+        @include mq() {
+            display: inline-block;
+        }
+
+        &--sp {
+            display: inline-block;
+        }
+    }
+
+}
+
+/* お客様の事例紹介 */
+.case {
+    padding: 5.3rem 1.6rem 4.1rem 1.6rem;
+    background-color: #f3f9f6;
+
+    @include mq() {
+        padding: 6.1rem 1rem 5.1rem 1rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 116.5rem;
+        }
+    }
+
+    &__contents {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.8rem;
+        margin-top: 2.5rem;
+
+        @include mq() {
+            flex-direction: row;
+            column-gap: 3rem;
+            margin-top: 3.2rem;
+        }
+
+    }
+
+    &__item {
+        overflow: hidden;
+        width: 35.8rem;
+        text-decoration: none;
+        color: #09947b;
+
+        @include mq() {
+            width: 36.9rem;
+        }
+    }
+
+    &__item-image {
+        width: 100%;
+        height: 20.1rem;
+        border-radius: 2.4rem;
+        display: block;
+
+        @include mq() {
+            height: 22.6rem;
+        }
+    }
+
+    &__item-description {
+        font-size: 1.8rem;
+        font-weight: 700;
+        padding: .8rem .2rem;
+        @include mq() {
+            font-size: 1.9rem;
+            padding: .9rem 0;
+        }
+    }
+}
+
+/* お知らせ */
+.news {
+    padding: 5.3rem 1.6rem 6.1rem 1.5rem;
+
+    @include mq() {
+        padding: 6.1rem 1rem 6.9rem 1rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 90rem;
+        }
+    }
+
+    &__list {
+        margin-top: 2.4rem;
+
+        @include mq() {
+            margin-top: 3.2rem;
+        }
+    }
+
+    &__item {
+        border-top: 1px solid #ddd;
+        list-style: none;
+        display: flex;
+        padding: 1.5rem 0 1.05rem;
+        column-gap: 1.8rem;
+        row-gap: .9rem;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &:last-child {
+            border-bottom: 1px solid #ddd;
+        }
+
+        @include mq() {
+            padding: 1.6rem 0;
+        }
+
+    }
+
+    &__date {
+        font-size: 1.5rem;
+        margin-bottom: .2rem;
+        @include mq() {
+            font-size: 1.4rem;
+        }
+
+    }
+
+    &__category {
+        font-size: 1.4rem;
+        color: #fff;
+        background-color: #473221;
+        border-radius: .4rem;
+        text-align: center;
+        width: 13.4rem;
+        line-height: 2;
+        letter-spacing: -.1rem;
+        @include mq() {
+            font-size: 1.4rem;
+
+        }
+    }
+
+    &__description {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #09947b;
+        width: 100%;
+        text-decoration: none;
+        padding-left: .2rem;
+        @include mq() {
+            width: fit-content;
+            margin-left: .5rem;
+        }
+    }
+
+    &__link-button {
+        display: block;
+        width: 30rem;
+        height: 6.6rem;
+        margin: 0 auto;
+        background-color: #168352;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 3.3rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        box-shadow: 0 .5rem 0 #066655;
+        transition: all .2s ease;
+        text-align: center;
+        padding-top: 2.5rem;
+        line-height: .8;
+        margin-top: 2.4rem;
+
+        &:hover {
+            background-color: #09947b;
+            box-shadow: 0 .2rem 0 #066655;
+            transform: translateY(.3rem);
+            opacity: 1;
+        }
+
+        @include mq() {
+            font-size: 1.8rem;
+            margin-top: 3.2rem;
+        }
+
+    }
+}
+
+/* ギャラリー */
+.gallery {
+    padding: .3rem 1.6rem 2rem 1.5rem;
+
+    @include mq() {
+        padding: 3.7rem 1rem 3.7rem 1rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 80rem;
+        }
+    }
+
+    &__carousel {
+        margin-top: 2.4rem;
+        width: 35.8rem;
+        height: 23.697rem;
+
+        @include mq() {
+            width: 80rem;
+            height: 49.994rem;
+            margin-top: 3.2rem;
+        }
+    }
+
+    &__card {
+        border-radius: 2.4rem;
+        overflow: hidden;
+        width: 35.8rem;
+        height: 23.697rem;
+
+        @include mq() {
+            width: 80rem;
+            height: 49.994rem;
+        }
+    }
+
+    &__image {
+        width: 100%;
+    }
+}
+
+/* カルーセル */
+.swiper-pagination-bullet {
+    background: #eee;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active {
+    background: #168352;
+}
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: .6rem;
+
+    @include mq() {
+        bottom: 1.8rem;
+    }
+}
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 .3rem;
+}
+
+/* 特長（価格・スペック） */
+.product-features {
+    padding: 3.4rem 1.6rem 2rem 1.5rem;
+
+    @include mq() {
+        padding: 2.1rem 1rem 3rem 1rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 80rem;
+        }
+    }
+
+    &__contents {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.6rem;
+        margin-top: 2.3rem;
+
+        @include mq() {
+            flex-direction: row;
+            column-gap: 3rem;
+            margin-top: 3.2rem;
+        }
+
+    }
+
+    &__item {
+        overflow: hidden;
+        width: 35.8rem;
+
+        @include mq() {
+            width: 24.6rem;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 20rem;
+        border-radius: 1.6rem;
+        display: block;
+
+        @include mq() {
+            height: 15rem;
+        }
+    }
+
+    &__description {
+        font-size: 1.8rem;
+        font-weight: 700;
+        padding: .8rem .1rem;
+        line-break: anywhere;
+        @include mq() {
+            padding: .7rem 0;
+        }
+    }
+
+}
+
+/* 価格 */
+.price {
+    padding: 2rem 1.6rem 2rem 1.5rem;
+
+    @include mq() {
+        padding: 1.5rem 1rem 2rem 1rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 80rem;
+        }
+    }
+
+    &__content {
+        font-family: "Montserrat", serif;
+        font-weight: 700;
+        font-size: 3.2rem;
+        margin-top: .8rem;
+        margin-left: .1rem;
+        @include mq() {
+            margin-top: 1.6rem;
+        }
+    }
+
+    &__tax-included {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 1.6rem;
+        padding-left: .1rem;
+    }
+}
+
+/* スペック */
+.spec {
+    padding: 2.3rem 1.6rem 6.5rem 1.5rem;
+
+    @include mq() {
+        padding: 2.8rem 1rem 7rem 1rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 80rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid #ddd;
+        margin: 1.2rem auto 0;
+        font-size: 1.6rem;
+        @include mq() {
+            width: 74rem;
+            margin-top: 2.1rem;
+        }
+    }
+
+    &__item-term,
+    &__item-description {
+        padding: .5rem 1.9rem;
+        box-sizing: border-box;
+        border-bottom: 1px solid #e5e7eb;
+        @include mq() {
+            padding: 1.7rem 1.8rem;
+        }
+    }
+
+    &__item-term {
+        width: 100%;
+        background-color: #f5f5f5;
+        font-weight: 700;
+        @include mq() {
+            width: 19.8rem;
+            border-right: 1px solid #e5e7eb;
+        }
+    }
+
+    &__item-description {
+        width: 100%;
+        @include mq() {
+            width: 53.8rem;
+            padding-left: 2.4rem;
+        }
+    }
+
+    &__item-term:nth-last-child(2),
+    &__item-description:last-child {
+        border-bottom: none;
+    }
+}
+
+/* お問い合わせ */
+.contact {
+    height: 36rem;
+    padding: 5rem 1.6rem 5rem 1.6rem;
+    background-image: url("/assets/image/img_contact_01_sp.jpg");
+    background-position: center;
+    background-size: cover;
+
+    @include mq() {
+        height: 45rem;
+        padding: 5rem 1rem 5rem 1rem;
+        background-image: url("/assets/image/img_contact_01_pc.jpg");
+    }
+
+    &__container {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__button {
+        display: block;
+        width: 35.8rem;
+        height: 8rem;
+        border: 2px solid #fff;
+        border-radius: 4rem;
+        background-color: transparent;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 700;
+        align-content: center;
+        transition: all .2s ease;
+        margin-bottom: .1rem;
+
+        &:hover {
+            background-color: #fff;
+            color: #168352;
+            opacity: 1;
+        }
+    }
+}
+
+/* よくあるご質問 */
+.faq {
+    padding: 1.2rem 1.6rem 16rem 1.5rem;
+
+    @include mq() {
+        padding: 4.8rem 1rem 4.7rem 1rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 80rem;
+        }
+    }
+
+    &__item {
+        border: 1px solid #ccc;
+        border-radius: 1.6rem;
+        padding: 2.1rem 2.4rem 1.7rem;
+        font-size: 1.6rem;
+        line-break: anywhere;
+        margin-bottom: 2.3rem;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+
+        @include mq() {
+            padding: 2rem 3rem 1.7rem;
+            margin-bottom: 2.4rem;
+        }
+
+        &:after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 2.6rem;
+            right: 3.2rem;
+            width: .2rem;
+            height: 1.8rem;
+            background-color: #666;
+            transform: rotate(90deg);
+
+            @include mq() {
+                right: 4.1rem;
+            }
+        }
+
+        &--close:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 2.6rem;
+            right: 3.2rem;
+            width: .2rem;
+            height: 1.8rem;
+            background-color: #666;
+            transition: all .2s ease;
+            transform: rotate(360deg);
+
+            @include mq() {
+                right: 4.1rem;
+            }
+        }
+    }
+
+    &__heading {
+
+        &:before {
+            content: "Q.";
+            color: #168352;
+            font-family: "Montserrat", serif;
+            font-weight: 700;
+            font-size: 2.4rem;
+            line-height: 1;
+            margin-right: 1.2rem;
+        }
+
+    }
+
+    &__category {
+        display: inline-block;
+        font-size: 1.1rem;
+        color: #168352;
+        border: 1px solid #168352;
+        border-radius: .4rem;
+        min-width: 10rem;
+        text-align: center;
+        vertical-align: text-top;
+        margin-right: .8rem;
+        height: 2.4rem;
+
+        @include mq() {
+            vertical-align: bottom;
+        }
+    }
+
+    &__question {
+        margin-left: 4.2rem;
+        font-size: 1.6rem;
+        line-height: 1.7;
+        padding-right: 2.9rem;
+
+        @include mq() {
+            margin-left: 4.2rem;
+            margin-top: 1rem;
+            letter-spacing: .21rem;
+        }
+    }
+
+    &__answer {
+        display: none;
+        margin-top: .2rem;
+        margin-left: .1rem;
+        @include mq() {
+            margin-top: 1.9rem;
+        }
+    }
+
+
+}
+
+/* フッター */
+.footer {
+    background-color: #168352;
+    padding: 2rem 1.6rem 2.7rem 1.6rem;
+
+    @include mq() {
+        padding: 3.3rem 1rem 4.1rem 1rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 124rem;
+        }
+    }
+
+    &__nav {
+        justify-items: center;
+    }
+
+    &__nav-list {
+        display: flex;
+        margin-left: .1rem;
+        @include mq() {
+            margin-left: .7rem;
+        }
+    }
+
+    &__nav-item {
+        list-style: none;
+        line-height: 2.4rem;
+        vertical-align: middle;
+        font-size: 1.3rem;
+        margin-top: .1rem;
+
+        @include mq() {
+            font-size: 1.45rem;
+        }
+
+        &:not(:first-child)::before {
+            content: "";
+            display: inline-block;
+            border-left: 1px solid white;
+            height: 2rem;
+            margin: 0 1.5rem .2rem 1.7rem;
+            @include mq() {
+                height: 2.4rem;
+                margin: 0 2rem;
+            }
+        }
+    }
+
+    &__nav-link {
+        color: #fff;
+        text-decoration: none;
+    }
 
 }

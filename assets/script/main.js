@@ -10,24 +10,42 @@ $(document).ready(function () {
         w = window.innerWidth;
         if(w >= 768) $('#js-drawer').show();
 	});
+	// アイコンクリック
 	$('#js-menu-btn').on('click', function (e) {
 		e.preventDefault();
-		$('#js-drawer').slideToggle();
-	});
-	$(document).on('click', function (e) {
-		if(!$(e.target).closest('#js-drawer, .header__menu-btn').length) {
-			if($('#js-drawer').is(':visible') && w < 768) $('#js-drawer').slideToggle();
+		if($('#js-drawer').is(':visible')){
+			$('#js-drawer').fadeOut();
+		}else{
+			$('#js-drawer').fadeIn();
 		}
 	});
-	$('#js-drawer a').on('click', function () {
-		$('#js-drawer').slideToggle();
+	// メニュー外の要素がクリックされた場合閉じる
+	$(document).on('click', function (e) {
+		if(!$(e.target).closest('#js-drawer, .header__menu-btn').length) {
+			if($('#js-drawer').is(':visible') && w < 768) $('#js-drawer').fadeOut();
+		}
 	});
 
 
     // 価格・スペックページ
     // カルーセル
-
+    const swiper = new Swiper('.swiper', {
+        loop: false,
+        initialSlide: 0,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 13,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
 
 	// よくあるご質問
 	// FAQ表示切り替え
+    $('.faq__item').on('click', function (e) {
+        $('.faq__answer', this).slideToggle();
+        $(this).toggleClass('faq__item--close');
+	});
+
 });

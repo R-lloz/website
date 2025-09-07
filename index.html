@@ -20,8 +20,8 @@
     <body>
 		<!-- ヘッダー -->
 		<header class="header">
-			<div class="header__container">
-				<h1 class="header__logo"><img class="header__logo-image" src="/assets/image/logo.svg" alt="Kirameki Farm"></h1>
+			<div class="header__container header__container--top">
+				<h1 class="header__logo"><a href="/"><img class="header__logo-image" src="/assets/image/logo.svg" alt="Kirameki Farm"></a></h1>
 				<button class="header__menu-btn" id="js-menu-btn"><img class="header__menu-btn-image" src="/assets/image/ico_menu.svg" alt="メニュー"></button>
 				<nav class="header__nav" id="js-drawer">
 					<ul class="header__nav-list">
@@ -35,13 +35,13 @@
 		<!-- メイン -->
 		<main>
 			<!-- カバー -->
-			<div class="cover">
-				<div class="cover__container">
+			<div class="cover cover--top">
+				<div class="cover__container cover__container--top">
 					<p class="cover__catch-copy">持続可能な農業を目指す</p>
 					<p class="cover__description">キラメキファームは革新的デザインの農業機器で未来の農業を実現。ビッグデータ・自動運転ロボット・リジェネラティブ農業で環境に優しい効率化を目指す。</p>
 					<picture>
 						<source srcset="/assets/image/img_index_cover_pc.jpg" media="(min-width: 768px)">
-						<img src="/assets/image/img_index_cover_sp.jpg" alt="" class="cover__image">
+						<img src="/assets/image/img_index_cover_sp.jpg" alt="" class="cover__image cover__image--top">
 					</picture>
 				</div>
 			</div>
@@ -59,7 +59,9 @@
 							<img src="/assets/image/img_index_about_01_sp.jpg" alt="" class="about__image">
 						</picture>
 						<div class="about__description">
-							<p class="about__description-heading">キラメキファームは、これからの農業を次世代の子どもたちに残すために創設されたイノベーションカンパニーです。</p>
+							<p class="about__description-heading">
+								<span class="about__inline-block">キラメキファームは、これからの農業を</span><span class="about__inline-block">次世代の子どもたちに残すために</span><span class="about__inline-block about__inline-block--sp">創設されたイノベーションカンパニーです。</span>
+							</p>
 							<p>キラメキファームは革新的デザインと最新技術を活用した農業機器メーカーです。未来の農業を実現するために、ビッグデータを駆使して省エネルギー・効率化を実現し、自動運転技術を搭載したロボットで一年中稼働することができる機器を提供します。リジェネラティブ農業を実現する技術を用いて、持続可能な農業システムをサポートします。私たちの社是は、次世代の子供たちに豊かな地球環境を残すこと。イノベーションを起こすことで農業に新たな価値を生み出し、地球環境保全に貢献することを目指しています。</p>
 						</div>
 					</div>
@@ -103,37 +105,52 @@
 			<section class="products">
 				<div class="products__container">
 					<h2 class="heading heading--top">
-						<span class="heading--en">Products/Service</span>
+						<span class="heading--en">Products / Service</span>
 						<span class="heading--jp">製品・サービス紹介</span>
 					</h2>
 					<ul class="products__list">
 						<li class="products__item products__item--large">
-							<a class="products__link" href="#">
-								<img src="/assets/image/img_index_product_01.png" alt="" class="products__item-image">
-								<h3 class="products__item-title">エネルギーセイバー農業ドローン</h3>
+							<a class="products__link products__link--large" href="#">
+								<picture>
+									<source srcset="/assets/image/img_index_product_01_pc.png" media="(min-width: 768px)">
+									<img src="/assets/image/img_index_product_01_sp.png" alt="" class="products__item-image products__item-image--large">
+								</picture>
+								<h3 class="products__item-title"><span class="products__inline-block">エネルギーセイバー</span><span class="products__inline-block">農業ドローン</span></h3>
 							</a>
 						</li>
 						<li class="products__item products__item--large">
-							<a class="products__link" href="#">
-								<img src="/assets/image/img_index_product_02.png" alt="" class="products__item-image">
-								<h3 class="products__item-title">エネルギーセイバー農業ドローン</h3>
+							<a class="products__link products__link--large" href="#">
+								<picture>
+									<source srcset="/assets/image/img_index_product_02_pc.png" media="(min-width: 768px)">
+									<img src="/assets/image/img_index_product_02_sp.png" alt="" class="products__item-image products__item-image--large">
+								</picture>
+								<h3 class="products__item-title"><span class="products__inline-block">プログレッシブ</span><span class="products__inline-block">ハーベストボット</span></h3>
 							</a>
 						</li>
 						<li class="products__item">
 							<a class="products__link" href="#">
-								<img src="/assets/image/img_index_product_03.png" alt="" class="products__item-image">
+								<picture>
+									<source srcset="/assets/image/img_index_product_03_pc.png" media="(min-width: 768px)">
+									<img src="/assets/image/img_index_product_03_sp.png" alt="" class="products__item-image">
+								</picture>
 								<h3 class="products__item-title">フューチャーファームマスター</h3>
 							</a>
 						</li>
 						<li class="products__item">
 							<a class="products__link" href="#">
-								<img src="/assets/image/img_index_product_04.png" alt="" class="products__item-image">
+								<picture>
+									<source srcset="/assets/image/img_index_product_04_pc.png" media="(min-width: 768px)">
+									<img src="/assets/image/img_index_product_04_sp.png" alt="" class="products__item-image">
+								</picture>
 								<h3 class="products__item-title">ミラクルグローアシスト</h3>
 							</a>
 						</li>
 						<li class="products__item">
 							<a class="products__link" href="#">
-								<img src="/assets/image/img_index_product_05.png" alt="" class="products__item-image">
+								<picture>
+									<source srcset="/assets/image/img_index_product_05_pc.png" media="(min-width: 768px)">
+									<img src="/assets/image/img_index_product_05_sp.png" alt="" class="products__item-image">
+								</picture>
 								<h3 class="products__item-title">インテリジェントプランター</h3>
 							</a>
 						</li>
@@ -185,32 +202,32 @@
 						<li class="news__item">
 							<p class="news__date">2023.05.15</p>
 							<p class="news__category">お知らせ</p>
-							<p class="news__description">都心で発見！キラメキファームの屋上畑で緑のオアシスが広がる</p>
+							<a class="news__description" href="#">都心で発見！キラメキファームの屋上畑で緑のオアシスが広がる</a>
 						</li>
 						<li class="news__item">
 							<p class="news__date">2023.04.05</p>
 							<p class="news__category">ニュースリリース</p>
-							<p class="news__description">食の安全を守る！キラメキファーム、農産物の品質管理に力を入れる</p>
+							<a class="news__description" href="#">食の安全を守る！キラメキファーム、農産物の品質管理に力を入れる</a>
 						</li>
 						<li class="news__item">
 							<p class="news__date">2023.03.12</p>
 							<p class="news__category">ニュースリリース</p>
-							<p class="news__description">害虫撃退！キラメキファームの自然環境に優しい取り組み</p>
+							<a class="news__description" href="#">害虫撃退！キラメキファームの自然環境に優しい取り組み</a>
 						</li>
 						<li class="news__item">
 							<p class="news__date">2023.02.01</p>
 							<p class="news__category">お知らせ</p>
-							<p class="news__description">キラメキファーム×ドローン技術 目覚ましい成果発表</p>
+							<a class="news__description" href="#">キラメキファーム×最新ドローン技術 目覚ましい成果発表</a>
 						</li>
 						<li class="news__item">
 							<p class="news__date">2023.01.25</p>
 							<p class="news__category">ニュースリリース</p>
-							<p class="news__description">キラメキファーム、無農薬野菜で子供たちの未来を支える</p>
+							<a class="news__description" href="#">キラメキファーム、無農薬野菜で子供たちの未来を支える</a>
 						</li>
 						<li class="news__item">
 							<p class="news__date">2023.01.08</p>
 							<p class="news__category">お知らせ</p>
-							<p class="news__description">キラメキ農法で収穫量2倍！革新的な農業技術が話題</p>
+							<a class="news__description" href="#">キラメキ農法で収穫量2倍！革新的な農業技術が話題</a>
 						</li>
 					</ul>
 					<a href="/news" class="news__link-button">ニュース一覧へ</a>
@@ -223,8 +240,8 @@
 			<div class="footer__container">
 				<nav class="footer__nav">
 					<ul class="footer__nav-list">
-						<li class="footer__nav-item"><a href="/price">価格・スペック</a></li>
-						<li class="footer__nav-item"><a href="/faq">よくあるご質問</a></li>
+						<li class="footer__nav-item"><a class="footer__nav-link" href="/price">価格・スペック</a></li>
+						<li class="footer__nav-item"><a class="footer__nav-link" href="/faq">よくあるご質問</a></li>
 					</ul>
 				</nav>
 			</div>
