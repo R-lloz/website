@@ -222,6 +222,11 @@ a:hover {
 
     &__nav-item {
         list-style: none;
+        padding: 1.3rem 0;
+
+        @include mq() {
+            padding: 2rem 0;
+        }
 
         &--top {
             padding-right: .5rem;
@@ -235,7 +240,6 @@ a:hover {
         color: #fff;
         text-decoration: none;
         display: block;
-        padding: 1.3rem 0;
         text-align: center;
         font-size: 1.8rem;
         font-weight: 700;
@@ -243,7 +247,6 @@ a:hover {
         @include mq() {
             color: #111;
             font-size: 1.6rem;
-            padding: 2rem 0;
         }
 
         &--current{
@@ -322,7 +325,7 @@ a:hover {
 
         &--top {
             height: 45rem;
-            width: auto;
+            width: 100%;
             border-radius: 4rem;
             margin-top: 2.6rem;
             @include mq() {
@@ -511,11 +514,8 @@ a:hover {
     &__reason {
         border-radius: 2.4rem;
         overflow: hidden;
-        width: 35.8rem;
-
-        @include mq() {
-            width: 36.9rem;
-        }
+        width: 100%;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, .05);
     }
 
     &__reason-image {
@@ -573,22 +573,18 @@ a:hover {
     }
 
     &__item {
-        background-color: #168352;
         color: #fff;
         border-radius: 2.4rem;
-        padding: 1.4rem 2.2rem 1.4rem 2.4rem;
+        overflow: hidden;
         font-size: 1.6rem;
         font-weight: 700;
         @include mq() {
-            padding: .9rem 2.2rem 1.4rem 2.4rem;
             width: 33.3rem;
             font-size: 1.7rem;
-
         }
 
         &--large {
             @include mq() {
-                padding: 1.7rem 1rem 1.6rem 3.2rem;
                 width: 52.5rem;
                 font-size: 2.1rem;
             }
@@ -596,19 +592,29 @@ a:hover {
     }
 
     &__link {
+        background-color: #168352;
         color: #fff;
         text-decoration: none;
         display: flex;
         align-items: center;
         column-gap: 1.7rem;
+        padding: 1.4rem 2.2rem 1.4rem 2.4rem;
         @include mq() {
             column-gap: 2rem;
+            padding: .9rem 2.2rem 1.4rem 2.4rem;
         }
 
         &--large {
             @include mq() {
                 column-gap: 2.7rem;
+                padding: 1.7rem 1rem 1.6rem 3.2rem;
             }
+        }
+
+        &:hover {
+            background-color: #dffaec;
+            color: #168352;
+            opacity: 1;
         }
 
     }
@@ -686,13 +692,9 @@ a:hover {
 
     &__item {
         overflow: hidden;
-        width: 35.8rem;
+        width: 100%;
         text-decoration: none;
         color: #09947b;
-
-        @include mq() {
-            width: 36.9rem;
-        }
     }
 
     &__item-image {
@@ -817,7 +819,6 @@ a:hover {
         margin-top: 2.4rem;
 
         &:hover {
-            background-color: #09947b;
             box-shadow: 0 .2rem 0 #066655;
             transform: translateY(.3rem);
             opacity: 1;
@@ -1104,7 +1105,7 @@ a:hover {
 
 /* よくあるご質問 */
 .faq {
-    padding: 1.2rem 1.6rem 16rem 1.5rem;
+    padding: 1.2rem 1.6rem 15.4rem 1.5rem;
 
     @include mq() {
         padding: 4.8rem 1rem 4.7rem 1rem;
@@ -1124,13 +1125,13 @@ a:hover {
         padding: 2.1rem 2.4rem 1.7rem;
         font-size: 1.6rem;
         line-break: anywhere;
-        margin-bottom: 2.3rem;
+        margin-bottom: 2.35rem;
         overflow: hidden;
         cursor: pointer;
         position: relative;
 
         @include mq() {
-            padding: 2rem 3rem 1.7rem;
+            padding: 2rem 3rem 1.8rem;
             margin-bottom: 2.4rem;
         }
 
@@ -1150,20 +1151,29 @@ a:hover {
             }
         }
 
-        &--close:before {
-            content: "";
-            display: inline-block;
-            position: absolute;
-            top: 2.6rem;
-            right: 3.2rem;
-            width: .2rem;
-            height: 1.8rem;
-            background-color: #666;
-            transition: all .2s ease;
-            transform: rotate(360deg);
+        &--close{
+            margin-bottom: 2.02rem;
 
             @include mq() {
-                right: 4.1rem;
+                padding: 2rem 3rem 1.89rem;
+                margin-bottom: 2.4rem;
+            }
+        
+            &:before {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                top: 2.6rem;
+                right: 3.2rem;
+                width: .2rem;
+                height: 1.8rem;
+                background-color: #666;
+                transition: all .2s ease;
+                transform: rotate(360deg);
+
+                @include mq() {
+                    right: 4.1rem;
+                }
             }
         }
     }
@@ -1207,7 +1217,7 @@ a:hover {
 
         @include mq() {
             margin-left: 4.2rem;
-            margin-top: 1rem;
+            margin-top: .9rem;
             letter-spacing: .21rem;
         }
     }
@@ -1258,10 +1268,12 @@ a:hover {
         line-height: 2.4rem;
         vertical-align: middle;
         font-size: 1.3rem;
-        margin-top: .1rem;
+        margin-top: .2rem;
+        letter-spacing: .03rem;
 
         @include mq() {
             font-size: 1.45rem;
+            margin-top: .3rem;
         }
 
         &:not(:first-child)::before {
@@ -1272,7 +1284,7 @@ a:hover {
             margin: 0 1.5rem .2rem 1.7rem;
             @include mq() {
                 height: 2.4rem;
-                margin: 0 2rem;
+                margin: 0 1.9rem 0 2rem;
             }
         }
     }

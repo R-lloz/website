@@ -205,6 +205,12 @@ a:hover {
 }
 .header__nav-item {
     list-style: none;
+    padding: 1.3rem 0;
+}
+@media screen and (min-width: 768px) {
+    .header__nav-item {
+        padding: 2rem 0;
+    }
 }
 .header__nav-item--top {
     padding-right: 0.5rem;
@@ -218,7 +224,6 @@ a:hover {
     color: #fff;
     text-decoration: none;
     display: block;
-    padding: 1.3rem 0;
     text-align: center;
     font-size: 1.8rem;
     font-weight: 700;
@@ -227,7 +232,6 @@ a:hover {
     .header__nav-link {
         color: #111;
         font-size: 1.6rem;
-        padding: 2rem 0;
     }
 }
 @media screen and (min-width: 768px) {
@@ -308,7 +312,7 @@ a:hover {
 }
 .cover__image--top {
     height: 45rem;
-    width: auto;
+    width: 100%;
     border-radius: 4rem;
     margin-top: 2.6rem;
 }
@@ -495,12 +499,8 @@ a:hover {
 .features__reason {
     border-radius: 2.4rem;
     overflow: hidden;
-    width: 35.8rem;
-}
-@media screen and (min-width: 768px) {
-    .features__reason {
-        width: 36.9rem;
-    }
+    width: 100%;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
 }
 .features__reason-image {
     width: 100%;
@@ -558,46 +558,52 @@ a:hover {
     }
 }
 .products__item {
-    background-color: #168352;
     color: #fff;
     border-radius: 2.4rem;
-    padding: 1.4rem 2.2rem 1.4rem 2.4rem;
+    overflow: hidden;
     font-size: 1.6rem;
     font-weight: 700;
 }
 @media screen and (min-width: 768px) {
     .products__item {
-        padding: 0.9rem 2.2rem 1.4rem 2.4rem;
         width: 33.3rem;
         font-size: 1.7rem;
     }
 }
 @media screen and (min-width: 768px) {
     .products__item--large {
-        padding: 1.7rem 1rem 1.6rem 3.2rem;
         width: 52.5rem;
         font-size: 2.1rem;
     }
 }
 .products__link {
+    background-color: #168352;
     color: #fff;
     text-decoration: none;
     display: flex;
     align-items: center;
     -moz-column-gap: 1.7rem;
     column-gap: 1.7rem;
+    padding: 1.4rem 2.2rem 1.4rem 2.4rem;
 }
 @media screen and (min-width: 768px) {
     .products__link {
         -moz-column-gap: 2rem;
         column-gap: 2rem;
+        padding: 0.9rem 2.2rem 1.4rem 2.4rem;
     }
 }
 @media screen and (min-width: 768px) {
     .products__link--large {
         -moz-column-gap: 2.7rem;
         column-gap: 2.7rem;
+        padding: 1.7rem 1rem 1.6rem 3.2rem;
     }
+}
+.products__link:hover {
+    background-color: #dffaec;
+    color: #168352;
+    opacity: 1;
 }
 .products__item-image {
     width: 10rem;
@@ -672,14 +678,9 @@ a:hover {
 }
 .case__item {
     overflow: hidden;
-    width: 35.8rem;
+    width: 100%;
     text-decoration: none;
     color: #09947b;
-}
-@media screen and (min-width: 768px) {
-    .case__item {
-        width: 36.9rem;
-    }
 }
 .case__item-image {
     width: 100%;
@@ -806,7 +807,6 @@ a:hover {
     margin-top: 2.4rem;
 }
 .news__link-button:hover {
-    background-color: #09947b;
     box-shadow: 0 0.2rem 0 #066655;
     transform: translateY(0.3rem);
     opacity: 1;
@@ -1099,7 +1099,7 @@ a:hover {
 
 /* よくあるご質問 */
 .faq {
-    padding: 1.2rem 1.6rem 16rem 1.5rem;
+    padding: 1.2rem 1.6rem 15.4rem 1.5rem;
 }
 @media screen and (min-width: 768px) {
     .faq {
@@ -1120,14 +1120,14 @@ a:hover {
     padding: 2.1rem 2.4rem 1.7rem;
     font-size: 1.6rem;
     line-break: anywhere;
-    margin-bottom: 2.3rem;
+    margin-bottom: 2.35rem;
     overflow: hidden;
     cursor: pointer;
     position: relative;
 }
 @media screen and (min-width: 768px) {
     .faq__item {
-        padding: 2rem 3rem 1.7rem;
+        padding: 2rem 3rem 1.8rem;
         margin-bottom: 2.4rem;
     }
 }
@@ -1145,6 +1145,15 @@ a:hover {
 @media screen and (min-width: 768px) {
     .faq__item:after {
         right: 4.1rem;
+    }
+}
+.faq__item--close {
+    margin-bottom: 2.02rem;
+}
+@media screen and (min-width: 768px) {
+    .faq__item--close {
+        padding: 2rem 3rem 1.89rem;
+        margin-bottom: 2.4rem;
     }
 }
 .faq__item--close:before {
@@ -1199,7 +1208,7 @@ a:hover {
 @media screen and (min-width: 768px) {
     .faq__question {
         margin-left: 4.2rem;
-        margin-top: 1rem;
+        margin-top: 0.9rem;
         letter-spacing: 0.21rem;
     }
 }
@@ -1249,11 +1258,13 @@ a:hover {
     line-height: 2.4rem;
     vertical-align: middle;
     font-size: 1.3rem;
-    margin-top: 0.1rem;
+    margin-top: 0.2rem;
+    letter-spacing: 0.03rem;
 }
 @media screen and (min-width: 768px) {
     .footer__nav-item {
         font-size: 1.45rem;
+        margin-top: 0.3rem;
     }
 }
 .footer__nav-item:not(:first-child)::before {
@@ -1266,7 +1277,7 @@ a:hover {
 @media screen and (min-width: 768px) {
     .footer__nav-item:not(:first-child)::before {
         height: 2.4rem;
-        margin: 0 2rem;
+        margin: 0 1.9rem 0 2rem;
     }
 }
 .footer__nav-link {
